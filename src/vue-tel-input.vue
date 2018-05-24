@@ -9,6 +9,18 @@
               <img :src="activeCountry.icon"
                   style="width: 25px; margin-right: 5px" />
             </template>
+            <b-dropdown-item>
+              <b-form-input v-model="search" placeholder="Search by name, ISO2 or country code" />
+            </b-dropdown-item>
+            <b-dropdown-item v-for="pb in preferredCountries"
+                            :key="pb['iso2']"
+                            @click="choose(pb)">
+              <img :src="pb.icon"
+                  style="width: 25px; margin-right: 5px" />
+              <strong>{{ pb.name }} </strong>
+              <span>+{{ pb.dialCode }}</span>
+            </b-dropdown-item>
+            <b-dropdown-divider></b-dropdown-divider>
             <b-dropdown-item v-for="pb in allCountries"
                             :key="pb['iso2']"
                             @click="choose(pb)">
@@ -57,7 +69,23 @@ export default {
     return {
       phone: "",
       allCountries,
-      activeCountry: { iso2: "" }
+      activeCountry: { iso2: "" },
+      preferredCountryCodes: [
+        "FI",
+        "SE",
+        "NO",
+        "DA",
+        "DE",
+        "FR",
+        "GB",
+        "US",
+        "ES",
+        "IT",
+        "RU",
+        "CN",
+        "JP"
+      ],
+      search: ""
     };
   },
   computed: {
@@ -111,6 +139,34 @@ export default {
         isValid: this.state,
         country: this.activeCountry.name
       };
+    },
+    preferredCountries() {
+      if (this.search) {
+        return this.allCountries
+          .filter(c => this.preferredCountryCodes.indexOf(c.iso2) > -1)
+          .filter(
+            c =>
+              c.name.indexOf(this.search) > -1 ||
+              c.iso2.indexOf(this.search) > -1 ||
+              c.dialCode.indexOf(this.search) > -1
+          );
+      }
+
+      return this.allCountries.filter(
+        c => this.preferredCountryCodes.indexOf(c.iso2) > -1
+      );
+    },
+    filteredCountries() {
+      if (this.search) {
+        return this.allCountries.filter(
+          c =>
+            c.name.indexOf(this.search) > -1 ||
+            c.iso2.indexOf(this.search) > -1 ||
+            c.dialCode.indexOf(this.search) > -1
+        );
+      }
+
+      return this.allCountries;
     }
   },
   watch: {
@@ -127,7 +183,7 @@ export default {
   methods: {
     choose(country) {
       this.activeCountry = country;
-      this.$emit("onInput", this.response);
+      this.$emit("oninput", this.response);
     },
     format(value) {
       return new asYouType(this.activeCountry.iso2).input(value); // eslint-disable-line
@@ -137,17 +193,8 @@ export default {
       this.$emit("input", this.response.number);
 
       // Emit the response, includes phone, validity and country
-      this.$emit("onInput", this.response);
+      this.$emit("oninput", this.response);
     }
   }
 };
 </script>
-
-<style src="bootstrap/dist/css/bootstrap.css"></style>
-<style>
-.dropdown-menu {
-  max-height: 500px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-</style>
