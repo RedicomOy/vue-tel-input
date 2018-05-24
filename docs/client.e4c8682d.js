@@ -2,9 +2,9 @@ webpackJsonp([0],[
 /* 0 */,
 /* 1 */,
 /* 2 */
-/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib?{"babelrc":false,"presets":[["/Users/stevend/coding/vue/vue-tel-input/node_modules/babel-preset-poi/index.js",{"jsx":"vue"}]],"cacheDirectory":true}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./demo/App.vue ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib?{"babelrc":false,"presets":[["/Users/kalle/Projects/github.com/RedicomOy/vue-tel-input/node_modules/babel-preset-poi/index.js",{"jsx":"vue"}]],"cacheDirectory":true}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./demo/App.vue ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -78,7 +78,7 @@ webpackJsonp([0],[
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/stevend/coding/vue/vue-tel-input/demo/index.js */4);
+module.exports = __webpack_require__(/*! /Users/kalle/Projects/github.com/RedicomOy/vue-tel-input/demo/index.js */4);
 
 
 /***/ }),
@@ -588,7 +588,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         if (o.isBuffer(e)) {
           var n = 0 | p(e.length);return t = i(t, n), 0 === t.length ? t : (e.copy(t, 0, 0, n), t);
         }if (e) {
-          if ("undefined" != typeof ArrayBuffer && e.buffer instanceof ArrayBuffer || "length" in e) return "number" != typeof e.length || K(e.length) ? i(t, 0) : c(t, e);if ("Buffer" === e.type && J(e.data)) return c(t, e.data);
+          if ("undefined" != typeof ArrayBuffer && e.buffer instanceof ArrayBuffer || "length" in e) return "number" != typeof e.length || K(e.length) ? i(t, 0) : c(t, e);if ("Buffer" === e.type && X(e.data)) return c(t, e.data);
         }throw new TypeError("First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.");
       }function p(t) {
         if (t >= r()) throw new RangeError("Attempt to allocate Buffer larger than maximum size: 0x" + r().toString(16) + " bytes");return 0 | t;
@@ -706,9 +706,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       }function N(t, e, n, r, i, o) {
         if (n + r > t.length) throw new RangeError("Index out of range");if (n < 0) throw new RangeError("Index out of range");
       }function F(t, e, n, r, i) {
-        return i || N(t, e, n, 4, 3.4028234663852886e38, -3.4028234663852886e38), X.write(t, e, n, r, 23, 4), n + 4;
+        return i || N(t, e, n, 4, 3.4028234663852886e38, -3.4028234663852886e38), J.write(t, e, n, r, 23, 4), n + 4;
       }function D(t, e, n, r, i) {
-        return i || N(t, e, n, 8, 1.7976931348623157e308, -1.7976931348623157e308), X.write(t, e, n, r, 52, 8), n + 8;
+        return i || N(t, e, n, 8, 1.7976931348623157e308, -1.7976931348623157e308), J.write(t, e, n, r, 52, 8), n + 8;
       }function z(t) {
         if (t = U(t).replace(tt, ""), t.length < 2) return "";for (; t.length % 4 != 0;) {
           t += "=";
@@ -756,8 +756,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       }function K(t) {
         return t !== t;
       }var Y = n(302),
-          X = n(303),
-          J = n(100);e.Buffer = o, e.SlowBuffer = b, e.INSPECT_MAX_BYTES = 50, o.TYPED_ARRAY_SUPPORT = void 0 !== t.TYPED_ARRAY_SUPPORT ? t.TYPED_ARRAY_SUPPORT : function () {
+          J = n(303),
+          X = n(100);e.Buffer = o, e.SlowBuffer = b, e.INSPECT_MAX_BYTES = 50, o.TYPED_ARRAY_SUPPORT = void 0 !== t.TYPED_ARRAY_SUPPORT ? t.TYPED_ARRAY_SUPPORT : function () {
         try {
           var t = new Uint8Array(1);return t.__proto__ = { __proto__: Uint8Array.prototype, foo: function foo() {
               return 42;
@@ -788,7 +788,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             return !0;default:
             return !1;}
       }, o.concat = function (t, e) {
-        if (!J(t)) throw new TypeError('"list" argument must be an Array of Buffers');if (0 === t.length) return o.alloc(0);var n;if (void 0 === e) for (e = 0, n = 0; n < t.length; ++n) {
+        if (!X(t)) throw new TypeError('"list" argument must be an Array of Buffers');if (0 === t.length) return o.alloc(0);var n;if (void 0 === e) for (e = 0, n = 0; n < t.length; ++n) {
           e += t[n].length;
         }var r = o.allocUnsafe(e),
             i = 0;for (n = 0; n < t.length; ++n) {
@@ -883,13 +883,13 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
       }, o.prototype.readInt32BE = function (t, e) {
         return e || L(t, 4, this.length), this[t] << 24 | this[t + 1] << 16 | this[t + 2] << 8 | this[t + 3];
       }, o.prototype.readFloatLE = function (t, e) {
-        return e || L(t, 4, this.length), X.read(this, t, !0, 23, 4);
+        return e || L(t, 4, this.length), J.read(this, t, !0, 23, 4);
       }, o.prototype.readFloatBE = function (t, e) {
-        return e || L(t, 4, this.length), X.read(this, t, !1, 23, 4);
+        return e || L(t, 4, this.length), J.read(this, t, !1, 23, 4);
       }, o.prototype.readDoubleLE = function (t, e) {
-        return e || L(t, 8, this.length), X.read(this, t, !0, 52, 8);
+        return e || L(t, 8, this.length), J.read(this, t, !0, 52, 8);
       }, o.prototype.readDoubleBE = function (t, e) {
-        return e || L(t, 8, this.length), X.read(this, t, !1, 52, 8);
+        return e || L(t, 8, this.length), J.read(this, t, !1, 52, 8);
       }, o.prototype.writeUIntLE = function (t, e, n, r) {
         if (t = +t, e |= 0, n |= 0, !r) {
           P(this, t, e, n, Math.pow(2, 8 * n) - 1, 0);
@@ -1505,7 +1505,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           var o = "`" + e + "`",
               a = "`" + n + "`";console.warn(a + " modifier is required by " + o + " modifier in order to work, be sure to include it before " + o + "!");
         }return i;
-      }function X(t, e) {
+      }function J(t, e) {
         var n;if (!Y(t.instance.modifiers, "arrow", "keepTogether")) return t;var r = e.element;if ("string" == typeof r) {
           if (!(r = t.instance.popper.querySelector(r))) return t;
         } else if (!t.instance.popper.contains(r)) return console.warn("WARNING: `arrow.element` must be child of its popper element!"), t;var i = t.placement.split("-")[0],
@@ -1523,7 +1523,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             $ = parseFloat(v["margin" + c], 10),
             y = parseFloat(v["border" + c + "Width"], 10),
             _ = g - t.offsets.popper[f] - $ - y;return _ = Math.max(Math.min(s[d] - b, _), 0), t.arrowElement = r, t.offsets.arrow = (n = {}, $t(n, f, Math.round(_)), $t(n, h, ""), n), t;
-      }function J(t) {
+      }function X(t) {
         return "end" === t ? "start" : "start" === t ? "end" : t;
       }function Q(t) {
         var e = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
@@ -1549,7 +1549,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
               g = c(u.bottom) > c(n.bottom),
               v = "left" === r && h || "right" === r && p || "top" === r && b || "bottom" === r && g,
               m = -1 !== ["top", "bottom"].indexOf(r),
-              $ = !!e.flipVariations && (m && "start" === o && h || m && "end" === o && p || !m && "start" === o && b || !m && "end" === o && g);(f || v || $) && (t.flipped = !0, (f || v) && (r = a[l + 1]), $ && (o = J(o)), t.placement = r + (o ? "-" + o : ""), t.offsets.popper = yt({}, t.offsets.popper, C(t.instance.popper, t.offsets.reference, t.placement)), t = I(t.instance.modifiers, t, "flip"));
+              $ = !!e.flipVariations && (m && "start" === o && h || m && "end" === o && p || !m && "start" === o && b || !m && "end" === o && g);(f || v || $) && (t.flipped = !0, (f || v) && (r = a[l + 1]), $ && (o = X(o)), t.placement = r + (o ? "-" + o : ""), t.offsets.popper = yt({}, t.offsets.popper, C(t.instance.popper, t.offsets.reference, t.placement)), t = I(t.instance.modifiers, t, "flip"));
         }), t;
       }function et(t) {
         var e = t.offsets,
@@ -1677,7 +1677,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           _t = ["auto-start", "auto", "auto-end", "top-start", "top", "top-end", "right-start", "right", "right-end", "bottom-end", "bottom", "bottom-start", "left-end", "left", "left-start"],
           wt = _t.slice(3),
           Ot = { FLIP: "flip", CLOCKWISE: "clockwise", COUNTERCLOCKWISE: "counterclockwise" },
-          St = { shift: { order: 100, enabled: !0, fn: at }, offset: { order: 200, enabled: !0, fn: it, offset: 0 }, preventOverflow: { order: 300, enabled: !0, fn: ot, priority: ["left", "right", "top", "bottom"], padding: 5, boundariesElement: "scrollParent" }, keepTogether: { order: 400, enabled: !0, fn: et }, arrow: { order: 500, enabled: !0, fn: X, element: "[x-arrow]" }, flip: { order: 600, enabled: !0, fn: tt, behavior: "flip", padding: 5, boundariesElement: "viewport" }, inner: { order: 700, enabled: !1, fn: lt }, hide: { order: 800, enabled: !0, fn: st }, computeStyle: { order: 850, enabled: !0, fn: K, gpuAcceleration: !0, x: "bottom", y: "right" }, applyStyle: { order: 900, enabled: !0, fn: Z, onLoad: q, gpuAcceleration: void 0 } },
+          St = { shift: { order: 100, enabled: !0, fn: at }, offset: { order: 200, enabled: !0, fn: it, offset: 0 }, preventOverflow: { order: 300, enabled: !0, fn: ot, priority: ["left", "right", "top", "bottom"], padding: 5, boundariesElement: "scrollParent" }, keepTogether: { order: 400, enabled: !0, fn: et }, arrow: { order: 500, enabled: !0, fn: J, element: "[x-arrow]" }, flip: { order: 600, enabled: !0, fn: tt, behavior: "flip", padding: 5, boundariesElement: "viewport" }, inner: { order: 700, enabled: !1, fn: lt }, hide: { order: 800, enabled: !0, fn: st }, computeStyle: { order: 850, enabled: !0, fn: K, gpuAcceleration: !0, x: "bottom", y: "right" }, applyStyle: { order: 900, enabled: !0, fn: Z, onLoad: q, gpuAcceleration: void 0 } },
           kt = { placement: "bottom", positionFixed: !1, eventsEnabled: !0, removeOnDestroy: !1, onCreate: function onCreate() {}, onUpdate: function onUpdate() {}, modifiers: St },
           Et = function () {
         function t(e, n) {
@@ -2803,10 +2803,12 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         var t = this;Object(o.a)().then(function (e) {
           t.activeCountry = i.a.find(function (t) {
             return t.iso2 === e;
-          });
+          }) || i.a[0];
         });
+      }, created: function created() {
+        this.value && (this.phone = this.value);
       }, data: function data() {
-        return { phone: "", allCountries: i.a, activeCountry: { iso2: "" } };
+        return { phone: "", allCountries: i.a, activeCountry: { iso2: "" }, preferredCountryCodes: ["FI", "SE", "NO", "DA", "DE", "FR", "GB", "US", "ES", "IT", "RU", "CN", "JP"], search: "" };
       }, computed: { mode: function mode() {
           return this.phone ? "+" === this.phone[0] ? "code" : "0" === this.phone[0] ? "prefix" : "normal" : "";
         }, formattedResult: function formattedResult() {
@@ -2819,14 +2821,28 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           return Object(r.c)(this.formattedResult);
         }, response: function response() {
           return { number: this.formattedResult && this.formattedResult.replace(/ /g, ""), isValid: this.state, country: this.activeCountry.name };
+        }, preferredCountries: function preferredCountries() {
+          var t = this;return this.search ? this.allCountries.filter(function (e) {
+            return t.preferredCountryCodes.indexOf(e.iso2) > -1;
+          }).filter(function (e) {
+            return e.name.toUpperCase().indexOf(t.search.toUpperCase()) > -1 || e.iso2.toUpperCase().indexOf(t.search.toUpperCase()) > -1 || e.dialCode.indexOf(t.search) > -1;
+          }) : this.allCountries.filter(function (e) {
+            return t.preferredCountryCodes.indexOf(e.iso2) > -1;
+          });
+        }, filteredCountries: function filteredCountries() {
+          var t = this;return this.search ? this.allCountries.filter(function (e) {
+            return -1 === t.preferredCountryCodes.indexOf(e.iso2);
+          }).filter(function (e) {
+            return e.name.toUpperCase().indexOf(t.search.toUpperCase()) > -1 || e.iso2.toUpperCase().indexOf(t.search.toUpperCase()) > -1 || e.dialCode.indexOf(t.search) > -1;
+          }) : this.allCountries;
         } }, watch: { state: function state(t) {
           t && "prefix" !== this.mode && (this.phone = this.formattedResult);
         } }, methods: { choose: function choose(t) {
-          this.activeCountry = t, this.$emit("onInput", this.response);
+          this.activeCountry = t, this.$emit("oninput", this.response);
         }, format: function format(t) {
           return new r.a(this.activeCountry.iso2).input(t);
         }, onInput: function onInput() {
-          this.$emit("input", this.response.number), this.$emit("onInput", this.response);
+          this.$emit("input", this.response.number), this.$emit("oninput", this.response);
         } } };
   }, function (t, e, n) {
     "use strict";
@@ -6050,7 +6066,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           o[r] = t[r + e];
         }return o;
       }function c(t) {
-        if ("string" == typeof t) return t;if (p(t)) return J ? J.call(t) : "";var e = t + "";return "0" == e && 1 / t == -m ? "-0" : e;
+        if ("string" == typeof t) return t;if (p(t)) return X ? X.call(t) : "";var e = t + "";return "0" == e && 1 / t == -m ? "-0" : e;
       }function f(t, e, n) {
         var r = t.length;return n = void 0 === n ? r : n, !e && n >= r ? t : d(t, e, n);
       }function h(t) {
@@ -6100,8 +6116,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           q = Object.prototype,
           K = q.toString,
           Y = W.Symbol,
-          X = Y ? Y.prototype : void 0,
-          J = X ? X.toString : void 0,
+          J = Y ? Y.prototype : void 0,
+          X = J ? J.toString : void 0,
           Q = function (t) {
         return function (e) {
           return n(v(g(e).replace(M, "")), t, "");
@@ -6817,7 +6833,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         i = function i() {
       return new Promise(function (t, e) {
         r("https://ipinfo.io/json", function (n, r) {
-          n && e(n), t(r.country);
+          n && e(n), t(r && r.country);
         });
       });
     };e.a = i;
@@ -7729,20 +7745,20 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     }function $(t) {
       t.window_size = 2 * t.w_size, o(t.head), t.max_lazy_match = j[t.level].max_lazy, t.good_match = j[t.level].good_length, t.nice_match = j[t.level].nice_length, t.max_chain_length = j[t.level].max_chain, t.strstart = 0, t.block_start = 0, t.lookahead = 0, t.insert = 0, t.match_length = t.prev_length = st - 1, t.match_available = 0, t.ins_h = 0;
     }function y() {
-      this.strm = null, this.status = 0, this.pending_buf = null, this.pending_buf_size = 0, this.pending_out = 0, this.pending = 0, this.wrap = 0, this.gzhead = null, this.gzindex = 0, this.method = J, this.last_flush = -1, this.w_size = 0, this.w_bits = 0, this.w_mask = 0, this.window = null, this.window_size = 0, this.prev = null, this.head = null, this.ins_h = 0, this.hash_size = 0, this.hash_bits = 0, this.hash_mask = 0, this.hash_shift = 0, this.block_start = 0, this.match_length = 0, this.prev_match = 0, this.match_available = 0, this.strstart = 0, this.match_start = 0, this.lookahead = 0, this.prev_length = 0, this.max_chain_length = 0, this.max_lazy_match = 0, this.level = 0, this.strategy = 0, this.good_match = 0, this.nice_match = 0, this.dyn_ltree = new C.Buf16(2 * ot), this.dyn_dtree = new C.Buf16(2 * (2 * rt + 1)), this.bl_tree = new C.Buf16(2 * (2 * it + 1)), o(this.dyn_ltree), o(this.dyn_dtree), o(this.bl_tree), this.l_desc = null, this.d_desc = null, this.bl_desc = null, this.bl_count = new C.Buf16(at + 1), this.heap = new C.Buf16(2 * nt + 1), o(this.heap), this.heap_len = 0, this.heap_max = 0, this.depth = new C.Buf16(2 * nt + 1), o(this.depth), this.l_buf = 0, this.lit_bufsize = 0, this.last_lit = 0, this.d_buf = 0, this.opt_len = 0, this.static_len = 0, this.matches = 0, this.insert = 0, this.bi_buf = 0, this.bi_valid = 0;
+      this.strm = null, this.status = 0, this.pending_buf = null, this.pending_buf_size = 0, this.pending_out = 0, this.pending = 0, this.wrap = 0, this.gzhead = null, this.gzindex = 0, this.method = X, this.last_flush = -1, this.w_size = 0, this.w_bits = 0, this.w_mask = 0, this.window = null, this.window_size = 0, this.prev = null, this.head = null, this.ins_h = 0, this.hash_size = 0, this.hash_bits = 0, this.hash_mask = 0, this.hash_shift = 0, this.block_start = 0, this.match_length = 0, this.prev_match = 0, this.match_available = 0, this.strstart = 0, this.match_start = 0, this.lookahead = 0, this.prev_length = 0, this.max_chain_length = 0, this.max_lazy_match = 0, this.level = 0, this.strategy = 0, this.good_match = 0, this.nice_match = 0, this.dyn_ltree = new C.Buf16(2 * ot), this.dyn_dtree = new C.Buf16(2 * (2 * rt + 1)), this.bl_tree = new C.Buf16(2 * (2 * it + 1)), o(this.dyn_ltree), o(this.dyn_dtree), o(this.bl_tree), this.l_desc = null, this.d_desc = null, this.bl_desc = null, this.bl_count = new C.Buf16(at + 1), this.heap = new C.Buf16(2 * nt + 1), o(this.heap), this.heap_len = 0, this.heap_max = 0, this.depth = new C.Buf16(2 * nt + 1), o(this.depth), this.l_buf = 0, this.lit_bufsize = 0, this.last_lit = 0, this.d_buf = 0, this.opt_len = 0, this.static_len = 0, this.matches = 0, this.insert = 0, this.bi_buf = 0, this.bi_valid = 0;
     }function _(t) {
-      var e;return t && t.state ? (t.total_in = t.total_out = 0, t.data_type = X, e = t.state, e.pending = 0, e.pending_out = 0, e.wrap < 0 && (e.wrap = -e.wrap), e.status = e.wrap ? ct : gt, t.adler = 2 === e.wrap ? 0 : 1, e.last_flush = P, B._tr_init(e), D) : r(t, U);
+      var e;return t && t.state ? (t.total_in = t.total_out = 0, t.data_type = J, e = t.state, e.pending = 0, e.pending_out = 0, e.wrap < 0 && (e.wrap = -e.wrap), e.status = e.wrap ? ct : gt, t.adler = 2 === e.wrap ? 0 : 1, e.last_flush = P, B._tr_init(e), D) : r(t, U);
     }function w(t) {
       var e = _(t);return e === D && $(t.state), e;
     }function O(t, e) {
       return t && t.state ? 2 !== t.state.wrap ? U : (t.state.gzhead = e, D) : U;
     }function S(t, e, n, i, o, a) {
-      if (!t) return U;var s = 1;if (e === G && (e = 6), i < 0 ? (s = 0, i = -i) : i > 15 && (s = 2, i -= 16), o < 1 || o > Q || n !== J || i < 8 || i > 15 || e < 0 || e > 9 || a < 0 || a > K) return r(t, U);8 === i && (i = 9);var l = new y();return t.state = l, l.strm = t, l.wrap = s, l.gzhead = null, l.w_bits = i, l.w_size = 1 << l.w_bits, l.w_mask = l.w_size - 1, l.hash_bits = o + 7, l.hash_size = 1 << l.hash_bits, l.hash_mask = l.hash_size - 1, l.hash_shift = ~~((l.hash_bits + st - 1) / st), l.window = new C.Buf8(2 * l.w_size), l.head = new C.Buf16(l.hash_size), l.prev = new C.Buf16(l.w_size), l.lit_bufsize = 1 << o + 6, l.pending_buf_size = 4 * l.lit_bufsize, l.pending_buf = new C.Buf8(l.pending_buf_size), l.d_buf = 1 * l.lit_bufsize, l.l_buf = 3 * l.lit_bufsize, l.level = e, l.strategy = a, l.method = n, w(t);
+      if (!t) return U;var s = 1;if (e === G && (e = 6), i < 0 ? (s = 0, i = -i) : i > 15 && (s = 2, i -= 16), o < 1 || o > Q || n !== X || i < 8 || i > 15 || e < 0 || e > 9 || a < 0 || a > K) return r(t, U);8 === i && (i = 9);var l = new y();return t.state = l, l.strm = t, l.wrap = s, l.gzhead = null, l.w_bits = i, l.w_size = 1 << l.w_bits, l.w_mask = l.w_size - 1, l.hash_bits = o + 7, l.hash_size = 1 << l.hash_bits, l.hash_mask = l.hash_size - 1, l.hash_shift = ~~((l.hash_bits + st - 1) / st), l.window = new C.Buf8(2 * l.w_size), l.head = new C.Buf16(l.hash_size), l.prev = new C.Buf16(l.w_size), l.lit_bufsize = 1 << o + 6, l.pending_buf_size = 4 * l.lit_bufsize, l.pending_buf = new C.Buf8(l.pending_buf_size), l.d_buf = 1 * l.lit_bufsize, l.l_buf = 3 * l.lit_bufsize, l.level = e, l.strategy = a, l.method = n, w(t);
     }function k(t, e) {
-      return S(t, e, J, tt, et, Y);
+      return S(t, e, X, tt, et, Y);
     }function E(t, e) {
       var n, s, d, c;if (!t || !t.state || e > F || e < 0) return t ? r(t, U) : U;if (s = t.state, !t.output || !t.input && 0 !== t.avail_in || s.status === vt && e !== N) return r(t, 0 === t.avail_out ? H : U);if (s.strm = t, n = s.last_flush, s.last_flush = e, s.status === ct) if (2 === s.wrap) t.adler = 0, l(s, 31), l(s, 139), l(s, 8), s.gzhead ? (l(s, (s.gzhead.text ? 1 : 0) + (s.gzhead.hcrc ? 2 : 0) + (s.gzhead.extra ? 4 : 0) + (s.gzhead.name ? 8 : 0) + (s.gzhead.comment ? 16 : 0)), l(s, 255 & s.gzhead.time), l(s, s.gzhead.time >> 8 & 255), l(s, s.gzhead.time >> 16 & 255), l(s, s.gzhead.time >> 24 & 255), l(s, 9 === s.level ? 2 : s.strategy >= Z || s.level < 2 ? 4 : 0), l(s, 255 & s.gzhead.os), s.gzhead.extra && s.gzhead.extra.length && (l(s, 255 & s.gzhead.extra.length), l(s, s.gzhead.extra.length >> 8 & 255)), s.gzhead.hcrc && (t.adler = I(t.adler, s.pending_buf, s.pending, 0)), s.gzindex = 0, s.status = ft) : (l(s, 0), l(s, 0), l(s, 0), l(s, 0), l(s, 0), l(s, 9 === s.level ? 2 : s.strategy >= Z || s.level < 2 ? 4 : 0), l(s, wt), s.status = gt);else {
-        var f = J + (s.w_bits - 8 << 4) << 8,
+        var f = X + (s.w_bits - 8 << 4) << 8,
             h = -1;h = s.strategy >= Z || s.level < 2 ? 0 : s.level < 6 ? 1 : 6 === s.level ? 2 : 3, f |= h << 6, 0 !== s.strstart && (f |= dt), f += 31 - f % 31, s.status = gt, u(s, f), 0 !== s.strstart && (u(s, t.adler >>> 16), u(s, 65535 & t.adler)), t.adler = 1;
       }if (s.status === ft) if (s.gzhead.extra) {
         for (d = s.pending; s.gzindex < (65535 & s.gzhead.extra.length) && (s.pending !== s.pending_buf_size || (s.gzhead.hcrc && s.pending > d && (t.adler = I(t.adler, s.pending_buf, s.pending - d, d)), a(t), d = s.pending, s.pending !== s.pending_buf_size));) {
@@ -7803,8 +7819,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         q = 3,
         K = 4,
         Y = 0,
-        X = 2,
-        J = 8,
+        J = 2,
+        X = 8,
         Q = 9,
         tt = 15,
         et = 8,
@@ -7974,7 +7990,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           s = 0,
           l = 7,
           u = 4;for (0 === a && (l = 138, u = 3), e[2 * (n + 1) + 1] = 65535, r = 0; r <= n; r++) {
-        i = a, a = e[2 * (r + 1) + 1], ++s < l && i === a || (s < u ? t.bl_tree[2 * i] += s : 0 !== i ? (i !== o && t.bl_tree[2 * i]++, t.bl_tree[2 * Y]++) : s <= 10 ? t.bl_tree[2 * X]++ : t.bl_tree[2 * J]++, s = 0, o = i, 0 === a ? (l = 138, u = 3) : i === a ? (l = 6, u = 3) : (l = 7, u = 4));
+        i = a, a = e[2 * (r + 1) + 1], ++s < l && i === a || (s < u ? t.bl_tree[2 * i] += s : 0 !== i ? (i !== o && t.bl_tree[2 * i]++, t.bl_tree[2 * Y]++) : s <= 10 ? t.bl_tree[2 * J]++ : t.bl_tree[2 * X]++, s = 0, o = i, 0 === a ? (l = 138, u = 3) : i === a ? (l = 6, u = 3) : (l = 7, u = 4));
       }
     }function O(t, e, n) {
       var r,
@@ -7987,7 +8003,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         if (i = a, a = e[2 * (r + 1) + 1], !(++s < d && i === a)) {
           if (s < c) do {
             u(t, i, t.bl_tree);
-          } while (0 != --s);else 0 !== i ? (i !== o && (u(t, i, t.bl_tree), s--), u(t, Y, t.bl_tree), l(t, s - 3, 2)) : s <= 10 ? (u(t, X, t.bl_tree), l(t, s - 3, 3)) : (u(t, J, t.bl_tree), l(t, s - 11, 7));s = 0, o = i, 0 === a ? (d = 138, c = 3) : i === a ? (d = 6, c = 3) : (d = 7, c = 4);
+          } while (0 != --s);else 0 !== i ? (i !== o && (u(t, i, t.bl_tree), s--), u(t, Y, t.bl_tree), l(t, s - 3, 2)) : s <= 10 ? (u(t, J, t.bl_tree), l(t, s - 3, 3)) : (u(t, X, t.bl_tree), l(t, s - 11, 7));s = 0, o = i, 0 === a ? (d = 138, c = 3) : i === a ? (d = 6, c = 3) : (d = 7, c = 4);
         }
       }
     }function S(t) {
@@ -8034,8 +8050,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         q = 7,
         K = 256,
         Y = 16,
-        X = 17,
-        J = 18,
+        J = 17,
+        X = 18,
         Q = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0],
         tt = [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13],
         et = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 7],
@@ -8175,8 +8191,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
               if (0 === l) break t;l--, f += i[a++] << h, h += 8;
             }if ((65535 & f) != (f >>> 16 ^ 65535)) {
               t.msg = "invalid stored block lengths", n.mode = ft;break;
-            }if (n.length = 65535 & f, f = 0, h = 0, n.mode = X, e === T) break t;case X:
-            n.mode = J;case J:
+            }if (n.length = 65535 & f, f = 0, h = 0, n.mode = J, e === T) break t;case J:
+            n.mode = X;case X:
             if (g = n.length) {
               if (g > l && (g = l), g > u && (g = u), 0 === g) break t;m.arraySet(o, i, a, g, s), l -= g, a += g, u -= g, s += g, n.length -= g;break;
             }n.mode = q;break;case Q:
@@ -8288,7 +8304,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
             Ot = I;break t;case ht:
             return L;case pt:default:
             return A;}
-      }return t.next_out = s, t.avail_out = u, t.next_in = a, t.avail_in = l, n.hold = f, n.bits = h, (n.wsize || b !== t.avail_out && n.mode < ft && (n.mode < ut || e !== E)) && c(t, t.output, t.next_out, b - t.avail_out) ? (n.mode = ht, L) : (p -= t.avail_in, b -= t.avail_out, t.total_in += p, t.total_out += b, n.total += b, n.wrap && b && (t.adler = n.check = n.flags ? y(n.check, o, b, t.next_out - b) : $(n.check, o, b, t.next_out - b)), t.data_type = n.bits + (n.last ? 64 : 0) + (n.mode === q ? 128 : 0) + (n.mode === nt || n.mode === X ? 256 : 0), (0 === p && 0 === b || e === E) && Ot === j && (Ot = P), Ot);
+      }return t.next_out = s, t.avail_out = u, t.next_in = a, t.avail_in = l, n.hold = f, n.bits = h, (n.wsize || b !== t.avail_out && n.mode < ft && (n.mode < ut || e !== E)) && c(t, t.output, t.next_out, b - t.avail_out) ? (n.mode = ht, L) : (p -= t.avail_in, b -= t.avail_out, t.total_in += p, t.total_out += b, n.total += b, n.wrap && b && (t.adler = n.check = n.flags ? y(n.check, o, b, t.next_out - b) : $(n.check, o, b, t.next_out - b)), t.data_type = n.bits + (n.last ? 64 : 0) + (n.mode === q ? 128 : 0) + (n.mode === nt || n.mode === J ? 256 : 0), (0 === p && 0 === b || e === E) && Ot === j && (Ot = P), Ot);
     }function h(t) {
       if (!t || !t.state) return A;var e = t.state;return e.window && (e.window = null), t.state = null, j;
     }function p(t, e) {
@@ -8332,8 +8348,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         q = 12,
         K = 13,
         Y = 14,
-        X = 15,
-        J = 16,
+        J = 15,
+        X = 16,
         Q = 17,
         tt = 18,
         et = 19,
@@ -8696,11 +8712,17 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     var r = function r() {
       var t = this,
           e = t.$createElement,
-          n = t._self._c || e;return n("b-row", { staticClass: "vue-tel-input justify-content-md-center" }, [n("b-col", { attrs: { col: "col", md: "12" } }, [n("b-input-group", [n("b-dropdown", { attrs: { variant: "outline-secondary" } }, [n("template", { slot: "button-content" }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: t.activeCountry.icon } })]), t._v(" "), t._l(t.allCountries, function (e) {
+          n = t._self._c || e;return n("b-row", { staticClass: "vue-tel-input justify-content-md-center" }, [n("b-col", { attrs: { col: "col", md: "12" } }, [n("b-input-group", [n("b-input-group-prepend", [n("b-dropdown", { attrs: { variant: "outline-secondary" } }, [n("template", { slot: "button-content" }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: t.activeCountry.icon } })]), t._v(" "), n("b-dropdown-header", [n("b-form-input", { attrs: { placeholder: "Search by name, ISO2 or country code" }, model: { value: t.search, callback: function callback(e) {
+            t.search = e;
+          }, expression: "search" } })], 1), t._v(" "), t._l(t.preferredCountries, function (e) {
+        return n("b-dropdown-item", { key: "pref-" + e.iso2, on: { click: function click(n) {
+              t.choose(e);
+            } } }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: e.icon } }), t._v(" "), n("strong", [t._v(t._s(e.name) + " ")]), t._v(" "), n("span", [t._v("+" + t._s(e.dialCode))])]);
+      }), t._v(" "), n("b-dropdown-divider"), t._v(" "), t._l(t.filteredCountries, function (e) {
         return n("b-dropdown-item", { key: e.iso2, on: { click: function click(n) {
               t.choose(e);
             } } }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: e.icon } }), t._v(" "), n("strong", [t._v(t._s(e.name) + " ")]), t._v(" "), n("span", [t._v("+" + t._s(e.dialCode))])]);
-      })], 2), t._v(" "), n("b-form-input", { attrs: { placeholder: "Enter your phone number", state: t.state, formatter: t.format }, on: { input: t.onInput }, model: { value: t.phone, callback: function callback(e) {
+      })], 2)], 1), t._v(" "), n("b-form-input", { attrs: { placeholder: "Enter your phone number", state: t.state, formatter: t.format }, on: { input: t.onInput }, model: { value: t.phone, callback: function callback(e) {
             t.phone = e;
           }, expression: "phone" } })], 1)], 1)], 1);
     },
@@ -8731,7 +8753,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_babelrc_false_presets_Users_stevend_coding_vue_vue_tel_input_node_modules_babel_preset_poi_index_js_jsx_vue_cacheDirectory_true_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(/*! !babel-loader?{"babelrc":false,"presets":[["/Users/stevend/coding/vue/vue-tel-input/node_modules/babel-preset-poi/index.js",{"jsx":"vue"}]],"cacheDirectory":true}!../node_modules/vue-loader/lib/selector?type=script&index=0!./App.vue */ 2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_babelrc_false_presets_Users_kalle_Projects_github_com_RedicomOy_vue_tel_input_node_modules_babel_preset_poi_index_js_jsx_vue_cacheDirectory_true_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(/*! !babel-loader?{"babelrc":false,"presets":[["/Users/kalle/Projects/github.com/RedicomOy/vue-tel-input/node_modules/babel-preset-poi/index.js",{"jsx":"vue"}]],"cacheDirectory":true}!../node_modules/vue-loader/lib/selector?type=script&index=0!./App.vue */ 2);
 /* unused harmony namespace reexport */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ee4485b0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(/*! !../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-ee4485b0","hasScoped":false,"buble":{"transforms":{}}}!../node_modules/vue-loader/lib/selector?type=template&index=0!./App.vue */ 14);
 function injectStyle (ssrContext) {
@@ -8752,7 +8774,7 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_babelrc_false_presets_Users_stevend_coding_vue_vue_tel_input_node_modules_babel_preset_poi_index_js_jsx_vue_cacheDirectory_true_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_babelrc_false_presets_Users_kalle_Projects_github_com_RedicomOy_vue_tel_input_node_modules_babel_preset_poi_index_js_jsx_vue_cacheDirectory_true_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
   __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ee4485b0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,

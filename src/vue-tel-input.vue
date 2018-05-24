@@ -9,11 +9,11 @@
               <img :src="activeCountry.icon"
                   style="width: 25px; margin-right: 5px" />
             </template>
-            <b-dropdown-item>
+            <b-dropdown-header>
               <b-form-input v-model="search" placeholder="Search by name, ISO2 or country code" />
-            </b-dropdown-item>
+            </b-dropdown-header>
             <b-dropdown-item v-for="pb in preferredCountries"
-                            :key="pb['iso2']"
+                            :key="`pref-${pb['iso2']}`"
                             @click="choose(pb)">
               <img :src="pb.icon"
                   style="width: 25px; margin-right: 5px" />
@@ -21,7 +21,7 @@
               <span>+{{ pb.dialCode }}</span>
             </b-dropdown-item>
             <b-dropdown-divider></b-dropdown-divider>
-            <b-dropdown-item v-for="pb in allCountries"
+            <b-dropdown-item v-for="pb in filteredCountries"
                             :key="pb['iso2']"
                             @click="choose(pb)">
               <img :src="pb.icon"
@@ -146,8 +146,8 @@ export default {
           .filter(c => this.preferredCountryCodes.indexOf(c.iso2) > -1)
           .filter(
             c =>
-              c.name.indexOf(this.search) > -1 ||
-              c.iso2.indexOf(this.search) > -1 ||
+              c.name.toUpperCase().indexOf(this.search.toUpperCase()) > -1 ||
+              c.iso2.toUpperCase().indexOf(this.search.toUpperCase()) > -1 ||
               c.dialCode.indexOf(this.search) > -1
           );
       }
@@ -158,12 +158,14 @@ export default {
     },
     filteredCountries() {
       if (this.search) {
-        return this.allCountries.filter(
-          c =>
-            c.name.indexOf(this.search) > -1 ||
-            c.iso2.indexOf(this.search) > -1 ||
-            c.dialCode.indexOf(this.search) > -1
-        );
+        return this.allCountries
+          .filter(c => this.preferredCountryCodes.indexOf(c.iso2) === -1)
+          .filter(
+            c =>
+              c.name.toUpperCase().indexOf(this.search.toUpperCase()) > -1 ||
+              c.iso2.toUpperCase().indexOf(this.search.toUpperCase()) > -1 ||
+              c.dialCode.indexOf(this.search) > -1
+          );
       }
 
       return this.allCountries;
@@ -198,3 +200,11 @@ export default {
   }
 };
 </script>
+
+<style src="bootstrap/dist/css/bootstrap.css"></style>
+<style>
+.dropdown-menu.show {
+  max-height: 300px;
+  overflow: scroll;
+}
+</style>
