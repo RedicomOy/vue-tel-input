@@ -8712,7 +8712,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
     var r = function r() {
       var t = this,
           e = t.$createElement,
-          n = t._self._c || e;return n("b-row", { staticClass: "vue-tel-input justify-content-md-center" }, [n("b-col", { attrs: { col: "col", md: "12" } }, [n("b-input-group", [n("b-input-group-prepend", [n("b-dropdown", { attrs: { variant: "outline-secondary" } }, [n("template", { slot: "button-content" }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: t.activeCountry.icon } })]), t._v(" "), n("b-dropdown-header", [n("b-form-input", { attrs: { placeholder: "Search by name, ISO2 or country code" }, model: { value: t.search, callback: function callback(e) {
+          n = t._self._c || e;return n("b-row", { staticClass: "vue-tel-input justify-content-md-center" }, [n("b-col", { attrs: { col: "col", md: "12" } }, [n("b-input-group", [n("b-input-group-prepend", [n("b-dropdown", { attrs: { variant: "outline-secondary" } }, [n("template", { slot: "button-content" }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: t.activeCountry.icon } })]), t._v(" "), n("b-dropdown-header", { on: { click: function click(t) {
+            t.preventDefault();
+          } } }, [n("b-form-input", { attrs: { placeholder: "Search by name, ISO2 or country code" }, model: { value: t.search, callback: function callback(e) {
             t.search = e;
           }, expression: "search" } })], 1), t._v(" "), t._l(t.preferredCountries, function (e) {
         return n("b-dropdown-item", { key: "pref-" + e.iso2, on: { click: function click(n) {
