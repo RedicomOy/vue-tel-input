@@ -9,6 +9,15 @@
           </vue-tel-input>
         </b-col>
       </b-row>
+      <b-row>
+        <b-col md="4" offset="4">
+          <b-btn v-b-modal.modal1>Launch demo modal</b-btn>
+          <b-modal id="modal1" title="Bootstrap-Vue">
+            <vue-tel-input @onInput="onInput">
+            </vue-tel-input>
+          </b-modal>
+        </b-col>
+      </b-row>
       <b-row v-if="phone.number"
              style="margin-top: 20px;">
         <b-col md="4"
@@ -33,14 +42,14 @@
 
 <script>
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
       phone: {
-        number: '',
+        number: "",
         isValid: false,
-        country: undefined,
-      },
+        country: undefined
+      }
     };
   },
   methods: {
@@ -48,8 +57,8 @@ export default {
       this.phone.number = number;
       this.phone.isValid = isValid;
       this.phone.country = country;
-    },
-  },
+    }
+  }
 };
 </script>
 

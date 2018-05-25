@@ -9,7 +9,7 @@
               <img :src="activeCountry.icon"
                   style="width: 25px; margin-right: 5px" />
             </template>
-            <b-dropdown-header @click.prevent="">
+            <b-dropdown-header @click.prevent>
               <b-form-input v-model="search" placeholder="Search by name, ISO2 or country code" />
             </b-dropdown-header>
             <b-dropdown-item v-for="pb in preferredCountries"
