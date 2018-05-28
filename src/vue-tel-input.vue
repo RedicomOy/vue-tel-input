@@ -31,11 +31,14 @@
             </b-dropdown-item>
           </b-dropdown>
         </b-input-group-prepend>
-        <b-form-input v-model="phone"
-                      placeholder="Enter your phone number"
-                      :state="state"
-                      :formatter="format"
-                      @input="onInput">
+        <b-form-input
+          v-model="phone"
+          placeholder="Enter your phone number"
+          ref="phone-input"
+          :state="state"
+          :formatter="format"
+          @input="onInput"
+        >
         </b-form-input>
       </b-input-group>
     </b-col>
