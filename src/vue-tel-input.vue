@@ -192,7 +192,8 @@ export default {
   methods: {
     choose(country) {
       this.activeCountry = country;
-      this.$emit("oninput", this.response);
+      // don't send event for country selection
+      // this.$emit("oninput", this.response);
     },
     format(value) {
       return new asYouType(this.activeCountry.iso2).input(value); // eslint-disable-line
