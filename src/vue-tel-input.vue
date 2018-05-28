@@ -38,6 +38,7 @@
           :state="state"
           :formatter="format"
           @input="onInput"
+          @keydown.native.enter.prevent="onEnter"
         >
         </b-form-input>
       </b-input-group>
@@ -220,6 +221,9 @@ export default {
     },
     blurSearch() {
       this.searchActive = false;
+    },
+    onEnter() {
+      this.$emit("enter", this.response.number);
     }
   }
 };

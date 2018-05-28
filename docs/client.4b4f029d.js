@@ -3242,7 +3242,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         } }, watch: { state: function state(t) {
           t && "prefix" !== this.mode && (this.phone = this.formattedResult);
         } }, methods: { choose: function choose(t) {
-          this.activeCountry = t, this.$emit("oninput", this.response);
+          this.activeCountry = t;
         }, format: function format(t) {
           return new i.a(this.activeCountry.iso2).input(t);
         }, onInput: function onInput() {
@@ -3257,6 +3257,8 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
           this.searchActive = !0;
         }, blurSearch: function blurSearch() {
           this.searchActive = !1;
+        }, onEnter: function onEnter() {
+          console.log("enter pressed");
         } } };
   }, function (t, e, n) {
     "use strict";
@@ -8883,7 +8885,9 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         return n("b-dropdown-item", { key: e.iso2, on: { click: function click(n) {
               t.choose(e);
             } } }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: e.icon } }), t._v(" "), n("strong", [t._v(t._s(e.name) + " ")]), t._v(" "), n("span", [t._v("+" + t._s(e.dialCode))])]);
-      })], 2)], 1), t._v(" "), n("b-form-input", { attrs: { placeholder: "Enter your phone number", state: t.state, formatter: t.format }, on: { input: t.onInput }, model: { value: t.phone, callback: function callback(e) {
+      })], 2)], 1), t._v(" "), n("b-form-input", { ref: "phone-input", attrs: { placeholder: "Enter your phone number", state: t.state, formatter: t.format }, on: { input: t.onInput }, nativeOn: { keydown: function keydown(e) {
+            return "button" in e || !t._k(e.keyCode, "enter", 13, e.key, "Enter") ? (e.preventDefault(), t.onEnter(e)) : null;
+          } }, model: { value: t.phone, callback: function callback(e) {
             t.phone = e;
           }, expression: "phone" } })], 1)], 1)], 1);
     },
