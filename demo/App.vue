@@ -12,9 +12,22 @@
       <b-row>
         <b-col md="4" offset="4">
           <b-btn v-b-modal.modal1>Launch demo modal</b-btn>
-          <b-modal id="modal1" title="Bootstrap-Vue">
+          <b-modal id="modal1" title="Bootstrap-Vue" @focusOut="console.log('out')">
             <vue-tel-input @onInput="onInput">
             </vue-tel-input>
+
+            <b-dropdown variant="outline-secondary">
+              <template slot="button-content">
+                button
+              </template>
+              <b-dropdown-header @click.prevent>
+                <b-form-input v-model="search" placeholder="Search by name, ISO2 or country code" />
+              </b-dropdown-header>
+              <b-dropdown-item key="1">
+                <strong>name</strong>
+              </b-dropdown-item>
+            </b-dropdown>
+
           </b-modal>
         </b-col>
       </b-row>

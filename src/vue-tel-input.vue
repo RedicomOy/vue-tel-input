@@ -4,13 +4,13 @@
            md="12">
       <b-input-group>
         <b-input-group-prepend>
-          <b-dropdown variant="outline-secondary">
+          <b-dropdown variant="outline-secondary" @hide="hideDropdown" @shown="shownDropdown">
             <template slot="button-content">
               <img :src="activeCountry.icon"
                   style="width: 25px; margin-right: 5px" />
             </template>
-            <b-dropdown-header @click.prevent>
-              <b-form-input v-model="search" placeholder="Search by name, ISO2 or country code" />
+            <b-dropdown-header @click="clickSearch">
+              <b-form-input v-model="search" id="search" placeholder="Search by name, ISO2 or country code" @blur.native="blurSearch" />
             </b-dropdown-header>
             <b-dropdown-item v-for="pb in preferredCountries"
                             :key="`pref-${pb['iso2']}`"
@@ -46,6 +46,9 @@
 import { format, asYouType, isValidNumber } from "libphonenumber-js";
 import allCountries from "./assets/all-countries";
 import getCountry from "./assets/default-country";
+
+//hide
+//bvEvt BvEvent object. Call bvEvt.preventDefault()
 
 export default {
   name: "vue-tel-input",
@@ -85,7 +88,8 @@ export default {
         "CN",
         "JP"
       ],
-      search: ""
+      search: "",
+      searchActive: false
     };
   },
   computed: {
@@ -196,6 +200,22 @@ export default {
 
       // Emit the response, includes phone, validity and country
       this.$emit("oninput", this.response);
+    },
+    shownDropdown() {
+      setTimeout(() => {
+        this.$el.querySelector("input").focus();
+      }, 300);
+    },
+    hideDropdown(bvEvt) {
+      if (this.searchActive) {
+        bvEvt.preventDefault();
+      }
+    },
+    clickSearch() {
+      this.searchActive = true;
+    },
+    blurSearch() {
+      this.searchActive = false;
     }
   }
 };
