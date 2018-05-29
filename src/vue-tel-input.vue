@@ -35,7 +35,6 @@
           v-model="phone"
           placeholder="Enter your phone number"
           ref="phone-input"
-          :key="Math.random()"
           :state="state"
           :formatter="format"
           @input="onInput"

@@ -8885,7 +8885,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */](Object.assign({}, __WEB
         return n("b-dropdown-item", { key: e.iso2, on: { click: function click(n) {
               t.choose(e);
             } } }, [n("img", { staticStyle: { width: "25px", "margin-right": "5px" }, attrs: { src: e.icon } }), t._v(" "), n("strong", [t._v(t._s(e.name) + " ")]), t._v(" "), n("span", [t._v("+" + t._s(e.dialCode))])]);
-      })], 2)], 1), t._v(" "), n("b-form-input", { key: Math.random(), ref: "phone-input", attrs: { placeholder: "Enter your phone number", state: t.state, formatter: t.format }, on: { input: t.onInput }, nativeOn: { keydown: function keydown(e) {
+      })], 2)], 1), t._v(" "), n("b-form-input", { ref: "phone-input", attrs: { placeholder: "Enter your phone number", state: t.state, formatter: t.format }, on: { input: t.onInput }, nativeOn: { keydown: function keydown(e) {
             return "button" in e || !t._k(e.keyCode, "enter", 13, e.key, "Enter") ? (e.preventDefault(), t.onEnter(e)) : null;
           } }, model: { value: t.phone, callback: function callback(e) {
             t.phone = e;
