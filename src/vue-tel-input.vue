@@ -59,6 +59,9 @@ export default {
   props: {
     value: {
       type: String
+    },
+    field: {
+      type: String
     }
   },
   mounted() {
@@ -204,7 +207,7 @@ export default {
       this.$emit("input", this.response.number);
 
       // Emit the response, includes phone, validity and country
-      this.$emit("oninput", this.response);
+      this.$emit("oninput", this.response, this.field);
     },
     shownDropdown() {
       setTimeout(() => {
