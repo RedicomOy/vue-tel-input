@@ -60,7 +60,7 @@ export default {
     value: {
       type: String
     },
-    field: {
+    name: {
       type: String
     }
   },
@@ -207,7 +207,7 @@ export default {
       this.$emit("input", this.response.number);
 
       // Emit the response, includes phone, validity and country
-      this.$emit("oninput", this.response, this.field);
+      this.$emit("oninput", this.response, this.name);
     },
     shownDropdown() {
       setTimeout(() => {
